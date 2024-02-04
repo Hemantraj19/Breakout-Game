@@ -8,7 +8,7 @@ This Python script creates a classic Brick Breaker game where a ball bounces aro
 
 ## Features
 
-- Bricks are displayed on the screen using the `Brick` class.
+- Bricks are displayed on the screen using the `Brick` class, each brick is assigned a random color.
 - The ball is represented by the `Ball` class, and its movement is controlled by the `move_ball` method.
 - The paddle is represented by the `Paddle` class, and its movement is controlled by the `go_left` and `go_right` methods.
 - Collision detection is implemented for the ball with the walls, bricks, and paddle.
