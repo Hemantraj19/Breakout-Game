@@ -22,7 +22,7 @@ screen.onkeypress(paddle.go_left, "Left")
 screen.onkeypress(paddle.go_right, "Right")
 game_is_on = True
 while game_is_on:
-    # time.sleep(ball.move_speed)
+    time.sleep(ball.move_speed)
     ball.move_ball()
 
     # Detect collision with right wall
