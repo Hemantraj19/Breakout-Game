@@ -41,7 +41,8 @@ This Python script creates a classic Brick Breaker game where a ball bounces aro
 - Python 3.x
 - Turtle graphics library
 
-## Acknowledgments
+## Note
 
-- This game is inspired by the classic Brick Breaker arcade game.
-- Special thanks to the Turtle graphics library for simplifying the graphics implementation.
+This Brick Breaker game is a simple implementation designed for educational purposes and as a fun project. Feel free to use, modify, and distribute the code. If you find any bugs or have suggestions for improvements, please create an issue or submit a pull request.
+
+Enjoy playing and happy coding!
