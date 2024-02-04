@@ -22,6 +22,11 @@ screen.onkeypress(paddle.go_left, "Left")
 screen.onkeypress(paddle.go_right, "Right")
 game_is_on = True
 while game_is_on:
+
+    if len(brick.bricks_list) == 0:
+        game_is_on = False
+        break
+    
     time.sleep(ball.move_speed)
     ball.move_ball()
 
