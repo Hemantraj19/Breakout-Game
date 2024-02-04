@@ -1,4 +1,4 @@
-# Brick Breaker Game
+# Breakout Game
 
 A simple Brick Breaker game implemented in Python using the Turtle graphics library.
 
@@ -24,8 +24,8 @@ This Python script creates a classic Brick Breaker game where a ball bounces aro
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/brick-breaker.git
-   cd brick-breaker
+   git clone https://github.com/Hemantraj19/Breakout-Game.git
+   cd Breakout-Game
    ```
 
 2. Run the script:
