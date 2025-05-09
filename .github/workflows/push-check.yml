@@ -1,4 +1,4 @@
-name: Validate JIRA Issue Key on Push to main or master
+name: Validate JIRA Issue Key on PR to main
 
 on:
   pull_request:
@@ -6,16 +6,25 @@ on:
       - main
 
 jobs:
-  check-os:
+  validate-jira-key:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Validates JIRA Issue key
+      - name: Get PR branch name
         run: |
-          #!/bin/bash
+          echo "PR head ref is: ${{ github.head_ref }}"
+          echo "BRANCH_NAME=${{ github.head_ref }}" >> $GITHUB_ENV
 
-          BRANCH_NAME="${GITHUB_HEAD_REF:-$(git rev-parse --abbrev-ref HEAD)}"
-
-          echo "$BRANCH_NAME"
+      - name: Validate JIRA Issue key in branch name
+        run: |
+          echo "Checking branch: $BRANCH_NAME"
+          if [[ ! "$BRANCH_NAME" =~ [A-Z]{2,}-[0-9]+ ]]; then
+            echo "Error: Branch name '$BRANCH_NAME' does not contain a valid JIRA issue key (e.g., ABC-123)"
+            exit 1
+          else
+            echo "Valid JIRA issue key found in branch name."
+          fi
+        env:
+          BRANCH_NAME: ${{ env.BRANCH_NAME }}
