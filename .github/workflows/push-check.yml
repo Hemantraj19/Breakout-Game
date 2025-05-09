@@ -1,0 +1,21 @@
+name: Validate JIRA Issue Key on Push to main or master
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-os:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Validates JIRA Issue key
+        run: |
+          #!/bin/bash
+
+          BRANCH_NAME="${GITHUB_HEAD_REF:-$(git rev-parse --abbrev-ref HEAD)}"
+
+          echo "$BRANCH_NAME"
